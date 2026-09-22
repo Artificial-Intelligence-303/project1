@@ -7,9 +7,9 @@
 | `Tuesday 13 Oct`   | Demo, in lab                                        |
 | `Tuesday 20 Oct`   | Due, with code review                               |
 | Points              | 10                                                  |
-| Format              | Team                                                |
+| Format              | Teams of two or three, which you form yourselves    |
 
-Challenges 1 through 3 handed you the problem. This project hands you the
+Challenges 1 through 3 gave you the problem. This project gives you the
 choice: what to build, and which search to build it on.
 
 ## What your team builds
@@ -37,9 +37,12 @@ Two kinds of game qualify:
 - **A single-player puzzle** where your agent solves it, races the human to
   solve it, or gives hints. Puzzles to start from: the 8-puzzle, Sokoban,
   Rush Hour, a maze, a river crossing, a word ladder. Your agent chooses
-  every move, so it searches with breadth first, uniform cost, or A*. A
-  grid game in which an opponent replans a path toward the human every
-  turn is this kind too.
+  every move, so any search from Weeks 3 and 4 fits: breadth first, depth
+  first, iterative deepening, uniform cost, or A*. Depth first finds a
+  solution rather than a shortest one, so if your puzzle is about solving
+  it in the fewest moves, say in `docs/plan.md` which of your two searches
+  guarantees that. A grid game in which an opponent replans a path toward
+  the human every turn is this kind too.
 
 Hidden information and dice are out for both kinds.
 
@@ -69,21 +72,32 @@ that it has every one of these:
 2. **An interface between the game and the search.** Your search functions
    are written against a small set of methods your game provides (the
    `Problem` shape from Challenges 2 and 3, or the game equivalent with
-   `to_move`, `is_terminal` and `utility`), so they never need to know
-   which game they are playing.
+   `to_move`, `is_terminal` and `utility`).
 3. **Two search algorithms, against that same interface**, and a
    **measurement**: run both from the same, non-trivial state and report
    how many nodes each visited. Minimax against alpha-beta, breadth first
-   against A*, or A* under two heuristics all qualify. The number comes
-   from running your code.
+   against iterative deepening, breadth first against A*, or A* under two
+   heuristics all qualify. The number comes from running your code.
 4. **A human can play from the command line.** No graphical interface is
    required. If your terminal can print the state and read a move, that is
    enough.
 
-There is no starter code. The repository holds this README, `docs/plan.md`
-and `docs/reflection.md` to fill in, the automated checks, and three issue
-forms under **Issues, New issue**: the plan sign-off your team opens, and
-the demo and code review the instructor fills in.
+There is no starter code in this repository. It holds this README,
+`docs/plan.md` and `docs/reflection.md` to fill in, the automated checks,
+and three issue forms under **Issues, New issue**: the plan sign-off your
+team opens, and the demo and code review the instructor fills in.
+
+## A worked example to read
+
+<https://github.com/Artificial-Intelligence-303/project1-reference-example>
+is a finished version of the structure this project asks for: `src/game.py`
+is the interface, `src/search.py` is minimax and alpha-beta written against
+that interface and nothing else, `src/nim.py` is one game that satisfies
+it, and `uv run python src/main.py` prints the node count for each search.
+
+Read it for the shape rather than for the game. Nim is a single pile of
+objects, which has none of the design decisions your game needs, and it is
+not your team's own, so it does not qualify as a submission.
 
 ## Layout, and the automated checks
 
@@ -142,26 +156,24 @@ distance estimate. Say in `plan.md` whether your game needs this.
 
 - **Thursday 24 September, in class: the plan sign-off.** Before class,
   open the **Plan sign-off** issue in your repository and fill it in from
-  your `plan.md` draft. In class the instructor visits each team, works
-  through the checklist at the bottom of the issue, and signs off or names
-  the one thing to fix before you write code. Nothing here is graded.
-- **Tuesday 13 October, in lab: a demo.** A human plays your game while the
-  instructor fills in the **Demo** issue. This is a checkpoint, not the
+  your `plan.md` draft. The instructor will work
+  through the checklist at the bottom of the issue, and will either sign off or indicate what to fix before you write code. 
+- **Tuesday 13 October, in lab: a demo.** Demonstrate a current working version of your game. **Demo** issue will be completed for you following your demonstration. This is a checkpoint, not the
   final grade.
 - **Tuesday 20 October: the finished project**, with a full code review
-  and `docs/reflection.md` completed. The instructor records the review in
+  and `docs/reflection.md` completed. The instructor/TL records the review in
   the **Code review** issue.
 
 ## Evaluation
 
 This project is worth **10 points**.
 
-| Component            | Value | Graded by |
-| :-------------------- | ----: | :-------- |
-| Working implementation | 5 | Instructor, full code review |
-| Demo | 1 | Instructor, in lab |
-| Written reflection | 2 | Instructor |
-| Oral component of the code review | 2 | Instructor, individual |
+| Component            | Value |
+| :-------------------- | ----: |
+| Working implementation | 5 |
+| Demo | 1 |
+| Written reflection | 2 |
+| Oral component of the code review | 2 |
 
 **The implementation** is graded on whether the interface and both search
 algorithms are present and correct, whether the algorithm choice is
@@ -179,18 +191,17 @@ about.
 
 ## How this project was built
 
-I chose the scope (a game of the team's own, with a fully visible state
-and no chance), the requirement that teams justify their algorithm rather
-than be assigned one, and the grading criteria. Claude drafted and revised
-the project materials, the templates, the issue forms and the automated
-checks. I reviewed the result and verified the reference implementation's
-measurements before release.
+I drafted the project description and requirements, and the grading criteria. Claude drafted the issue forms, automated checks, and an example implementation. I reviewed the result and verified implementation before release.
 
 ## AI use on this project
 
 Full policy: **[AI in this course](https://areweagentsyet.com/ai/)**. AI
 tools are allowed here, you disclose them, and every member has to be able
 to explain any part of the code in the review.
+
+**Writing your tests with an AI tool is good practice here.** Give it your
+interface and your rules, ask for cases, and check each case against your
+own rules before you keep it.
 
 The specific hazard on a project like this: a tool asked for "minimax for
 tic-tac-toe" or "A* for the 8-puzzle" hands back a complete implementation
