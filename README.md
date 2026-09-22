@@ -16,17 +16,22 @@ choice: what to build, and which search to build it on.
 
 **A game of your own, played from the command line, in which a search
 algorithm from Weeks 3 to 5 does the thinking.** Your team designs the
-game. Starting from a game that exists and changing it is the usual way to
-do that: a different board, a different way to win, a piece that moves
-differently, a different turn structure, a different goal for a puzzle.
-At least one rule has to be yours, and it has to change what the search
-sees. Implementing an existing game as published does not qualify.
+game, one of two ways:
+
+- **Invent one.** A game nobody has played yet, with rules your team
+  writes.
+- **Extend one.** Start from a game that exists and change it: a different
+  board, a different way to win, a piece that moves differently, a
+  different turn structure, a different goal for a puzzle. At least one
+  rule has to be yours, and it has to change what the search sees.
+
+Implementing an existing game as published does not qualify.
 
 Two kinds of game qualify:
 
 - **A two-player game** where the human plays against your agent. Games to
-  start from: tic-tac-toe, Connect Four, Nim, a small Othello or checkers
-  variant. Both players see the whole state, there is no randomness, and
+  start from, or to measure an invented game against: tic-tac-toe, Connect
+  Four, Nim, a small Othello or checkers variant. Both players see the whole state, there is no randomness, and
   the game ends. The agent searches with minimax, alpha-beta, or a
   depth-limited version of either.
 - **A single-player puzzle** where your agent solves it, races the human to
@@ -107,10 +112,11 @@ design, or the code; the demo, the code review and the reflection do.
 
 ## How to fill in `plan.md`
 
-1. **Brainstorm two or three ideas for a game of your own.** For each: the
-   game you started from, if any; the change that makes it yours; the
-   initial state; the legal actions; what the state looks like after the
-   first couple of turns.
+1. **Brainstorm two or three ideas for a game of your own**, invented or
+   extended. For each: the game you started from, if any, and the change
+   that makes it yours, or the core idea if it is new; the initial state;
+   the legal actions; what the state looks like after the first couple of
+   turns.
 2. **Pick one**, and say why: how big is the state space, as a number, and
    will the full search finish in a reasonable time, or will you need a
    depth limit and a heuristic?

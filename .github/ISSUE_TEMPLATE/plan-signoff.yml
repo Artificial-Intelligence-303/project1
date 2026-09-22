@@ -23,8 +23,8 @@ body:
   - type: textarea
     attributes:
       label: What is yours about it
-      description: The game you started from, if any, and the rule, board, piece or goal you changed.
-      placeholder: Started from tic-tac-toe. Both players place the same symbol, and whoever completes a line loses.
+      description: Invented from scratch, say so and give the core idea. Extended from a game that exists, name it and the rule, board, piece or goal you changed.
+      placeholder: Extended from tic-tac-toe. Both players place the same symbol, and whoever completes a line loses.
     validations:
       required: true
   - type: textarea
@@ -86,7 +86,7 @@ body:
       label: Instructor checklist
       description: Leave this as it is. The instructor ticks it at your table.
       value: |
-        - [ ] The game is the team's own: at least one rule, board, piece or goal differs from the game it started from, and the difference changes what the search sees.
+        - [ ] The game is the team's own: invented, or extended from a game that exists with at least one rule, board, piece or goal that differs and changes what the search sees.
         - [ ] The mover matches the algorithm: something else takes turns, so minimax or alpha-beta; or only the agent moves, so the frontier loop (breadth first, uniform cost, A*).
         - [ ] No hidden information and no dice: fully observable and deterministic.
         - [ ] A state is a whole position plus whose turn it is, and two move orders that reach the same position give the same state.

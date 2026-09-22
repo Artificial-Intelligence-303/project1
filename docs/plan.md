@@ -6,11 +6,12 @@ Team members: TODO
 
 ## Brainstorm
 
-Two or three ideas for a game of your own. A modification of an existing
-game counts, as long as at least one rule, board, piece, or goal is yours.
-For each idea: the game you started from, if any; the change that makes it
-yours; the initial state; the legal actions from it; and what the state
-looks like after the first move or two.
+Two or three ideas for a game of your own, invented from scratch or
+extended from a game that exists. An extension counts as long as at least
+one rule, board, piece, or goal is yours. For each idea: the game you
+started from and the change that makes it yours, or the core idea if it is
+new; the initial state; the legal actions from it; and what the state looks
+like after the first move or two.
 
 **Idea 1:** TODO
 
