@@ -1,0 +1,78 @@
+# Automated checks for Project 1. Run them yourself with:
+#
+#     uv run gatorgrade --config gatorgrade.yml
+#
+# These are the same checks that run on GitHub when you push. They check
+# that the pieces are there, not that the game is good: the demo, the code
+# review and the reflection do that, and the final grade is the
+# instructor's call.
+
+- description: "[COMMITS] The repository has at least 20 commits"
+  check: CountCommits
+  options:
+    count: 20
+
+- description: "[LAYOUT] The game starts from src/main.py"
+  check: ConfirmFileExists
+  options:
+    file: main.py
+    directory: src
+
+- description: "[LAYOUT] There is at least one test file in tests/"
+  check: CountCommandOutput
+  options:
+    command: ls tests/test_*.py
+    count: 1
+
+- description: "[TESTS] The team's own tests pass"
+  check: ExecuteCommand
+  options:
+    command: uv run pytest
+
+- description: "[MEASUREMENT] src/main.py --measure prints a node count for each search"
+  check: MatchCommandRegex
+  options:
+    command: uv run python src/main.py --measure
+    regex: "[0-9][0-9,]*"
+    count: 2
+
+- description: "[STYLE] Code follows the Google Python style guide"
+  check: ExecuteCommand
+  options:
+    command: uv run ruff check src tests
+
+- docs/plan.md:
+  - description: "[PLAN] The plan has no TODO markers left in it"
+    check: MatchFileFragment
+    options:
+      fragment: "TODO"
+      count: 0
+      exact: true
+  - description: "[PLAN] The plan keeps its sections: Our game, Our algorithm, Goals, Pseudocode"
+    check: MatchFileRegex
+    options:
+      regex: "## (Our game|Our algorithm|Goals|Pseudocode)"
+      count: 4
+  - description: "[PLAN] The plan meets the 300 word minimum"
+    check: CountFileWords
+    options:
+      count: 300
+      exact: false
+
+- docs/reflection.md:
+  - description: "[REFLECTION] The reflection has no TODO markers left in it"
+    check: MatchFileFragment
+    options:
+      fragment: "TODO"
+      count: 0
+      exact: true
+  - description: "[REFLECTION] The measurement section reports a number of nodes, states or positions"
+    check: MatchFileRegex
+    options:
+      regex: "[0-9][0-9,]* (nodes|states|positions)"
+      count: 1
+  - description: "[REFLECTION] The reflection meets the 300 word minimum"
+    check: CountFileWords
+    options:
+      count: 300
+      exact: false

@@ -1,0 +1,40 @@
+[project]
+name = "project-01-search-games"
+version = "1.0.0"
+description = "CMPSC 303 Project 1: a game of your own, played by a search algorithm."
+requires-python = ">=3.11"
+dependencies = [
+    "gatorgrade",
+    "pytest",
+    "pytest-timeout",
+    "ruff",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+# A test that runs for a minute is not slow, it is searching a tree that
+# does not finish. Test on a small state, or add a depth limit.
+timeout = 60
+
+# Style is checked against the Google Python Style Guide:
+# https://google.github.io/styleguide/pyguide.html
+[tool.ruff]
+line-length = 80
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors, includes line length
+    "W",   # pycodestyle warnings, includes trailing whitespace
+    "F",   # pyflakes, unused imports and names
+    "I",   # import ordering
+    "D",   # docstring conventions
+    "N",   # naming conventions
+]
+ignore = [
+    "D203",  # conflicts with D211, which ruff prefers
+    "D213",  # conflicts with D212, which matches the Google convention
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"

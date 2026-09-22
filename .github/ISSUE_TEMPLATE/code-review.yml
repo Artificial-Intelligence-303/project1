@@ -1,0 +1,63 @@
+name: Code review
+description: Tuesday 20 October. Filled in by the instructor during the full code review of the finished project.
+title: "Project 1 code review"
+labels: ["code review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Filled in by the instructor at the code review. The implementation and the reflection are
+        team grades. The oral component is individual: each member is asked about a part of the
+        code and has to be able to explain it without looking at it first.
+  - type: input
+    attributes:
+      label: Team members present
+    validations:
+      required: true
+  - type: checkboxes
+    attributes:
+      label: Working implementation, 5 points
+      description: The five things the README requires, checked in the code and by running it.
+      options:
+        - label: The interface exists, and the search functions call only its methods, never the game directly
+        - label: Both search algorithms are present, correct on a state worked by hand, and written against that interface
+        - label: The algorithm choice in plan.md is justified and fits the game (who moves, what a state is, whether the tree finishes)
+        - label: The measurement compares both searches from the same non-trivial state, and the node counts come from running the code
+        - label: A human can play from the terminal start to finish
+  - type: input
+    attributes:
+      label: Implementation score, out of 5
+    validations:
+      required: true
+  - type: checkboxes
+    attributes:
+      label: Written reflection, 2 points
+      options:
+        - label: Each of the three goals from plan.md is revisited and the answer is honest, including any goal that was not met
+        - label: Every member's AI disclosure names the tool, what it was used for, and what was done with the output, or says "none"
+  - type: input
+    attributes:
+      label: Reflection score, out of 2
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Oral component, 2 points each, individual
+      description: One row per member. Outcome is 2 (explained it), 1 (explained it with gaps), or 0 (could not).
+      value: |
+        | Member | Asked about | Outcome |
+        | --- | --- | --- |
+        |  |  |  |
+        |  |  |  |
+        |  |  |  |
+        |  |  |  |
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Team total, out of 8, before the individual oral score
+      description: Implementation plus reflection plus the demo score from the demo issue.
+  - type: textarea
+    attributes:
+      label: Notes
+      description: What to say in the feedback, and anything worth carrying to Project 2.

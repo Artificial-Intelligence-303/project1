@@ -1,0 +1,48 @@
+name: Demo
+description: Tuesday 13 October, in lab. Filled in by the instructor while a human plays the team's game.
+title: "Project 1 demo"
+labels: ["demo"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Filled in by the instructor during the Week 8 lab. A human plays the game from the command
+        line while the team explains what the agent is doing. This is a checkpoint worth 1 point,
+        not the final grade; the implementation is graded at the code review a week later.
+  - type: input
+    attributes:
+      label: Team members present
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: The game, and the algorithm plan.md names
+    validations:
+      required: true
+  - type: checkboxes
+    attributes:
+      label: What the demo showed
+      description: Tick what was seen working, not what was described.
+      options:
+        - label: The game prints its state and reads a move from the terminal
+        - label: The agent answers with a move chosen by the search named in plan.md, not by a hand-written rule
+        - label: The game ends and says who won, lost, or drew, or that the puzzle is solved
+        - label: The search is written against an interface, and the team can point to the methods the game provides it
+        - label: Both searches run on the same state, or the team can say what is left to make that happen
+        - label: The node count for at least one search is printed from a real run
+  - type: dropdown
+    attributes:
+      label: Outcome
+      options:
+        - "Complete: a human played it and the agent searched (1 point)"
+        - "Partial: it runs, but the search or the play is not there yet (0.5)"
+        - "Not yet: nothing playable was shown (0)"
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Before the code review
+      description: What has to change in the week left, in the order to do it.
+  - type: textarea
+    attributes:
+      label: Notes
