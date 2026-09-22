@@ -84,8 +84,8 @@ that it has every one of these:
 
 There is no starter code in this repository. It holds this README,
 `docs/plan.md` and `docs/reflection.md` to fill in, the automated checks,
-and three issue forms under **Issues, New issue**: the plan sign-off your
-team opens, and the demo and code review the instructor fills in.
+and the three issue forms the instructor fills in: the plan sign-off, the
+demo, and the code review.
 
 ## A worked example to read
 
@@ -154,12 +154,13 @@ distance estimate. Say in `plan.md` whether your game needs this.
 
 ## What is due, and when
 
-- **Thursday 24 September, in class: the plan sign-off.** Before class,
-  open the **Plan sign-off** issue in your repository and fill it in from
-  your `plan.md` draft. The instructor will work
-  through the checklist at the bottom of the issue, and will either sign off or indicate what to fix before you write code. 
-- **Tuesday 13 October, in lab: a demo.** Demonstrate a current working version of your game. **Demo** issue will be completed for you following your demonstration. This is a checkpoint, not the
-  final grade.
+- **Thursday 24 September, in class: the plan sign-off.** Bring your draft
+  of `docs/plan.md`. The instructor works through it with your team at your
+  table, and will either sign off or indicate what to fix before you write
+  code. The **Plan sign-off** issue is filled in for you.
+- **Tuesday 13 October, in lab: a demo.** Demonstrate a current working
+  version of your game. The **Demo** issue is filled in for you following
+  your demonstration. This is a checkpoint, not the final grade.
 - **Tuesday 20 October: the finished project**, with a full code review
   and `docs/reflection.md` completed. The instructor/TL records the review in
   the **Code review** issue.

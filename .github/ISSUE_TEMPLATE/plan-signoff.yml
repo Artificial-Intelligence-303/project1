@@ -1,102 +1,58 @@
 name: Plan sign-off
-description: Thursday 24 September, in class. Your team opens this from your plan.md draft; the instructor completes the checklist at your table.
+description: Thursday 24 September, in class. Filled in by the instructor at the team's table, from the team's docs/plan.md.
 title: "Project 1 plan sign-off"
 labels: ["plan sign-off"]
 body:
   - type: markdown
     attributes:
       value: |
-        Open this issue before class on Thursday and fill in every field from your `docs/plan.md`
-        draft. Nothing here is graded. In class the instructor visits each team, ticks the checklist
-        at the bottom, and either signs off or names the one thing to fix before you write code.
+        Filled in by the instructor during Thursday's class, from the team's `docs/plan.md` draft.
+        Nothing here is graded. Each team is visited at its table and the plan is either signed off
+        or given the one thing to fix before any code is written.
   - type: input
     attributes:
-      label: Team members
+      label: Team members present
     validations:
       required: true
   - type: input
     attributes:
-      label: The game
-      placeholder: Connect Three on a 4 by 4 board; a 3 by 3 sliding puzzle with one tile that cannot move
+      label: The game, and what is the team's own about it
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: The algorithm, and the second one it is measured against
+    validations:
+      required: true
+  - type: checkboxes
+    attributes:
+      label: The plan
+      description: Tick what the draft of plan.md says, not what the team says at the table.
+      options:
+        - label: "The game is the team's own: invented, or extended from a game that exists with at least one rule, board, piece or goal that differs and changes what the search sees."
+        - label: "The mover matches the algorithm: something else takes turns, so minimax or alpha-beta; or only the agent moves, so a frontier search (breadth first, depth first, iterative deepening, uniform cost, A*)."
+        - label: "If the puzzle is scored on the fewest moves, plan.md names which of the two searches guarantees a shortest solution."
+        - label: "No hidden information and no dice: fully observable and deterministic."
+        - label: "A state is a whole position plus whose turn it is, and two move orders that reach the same position give the same state."
+        - label: "The size estimate is a number, and the team can say where it came from."
+        - label: "If the full tree does not finish, a depth limit and an evaluation function are named, and the team knows the answer at the horizon is an estimate."
+        - label: "The second algorithm runs on the same interface from the same starting state, so the node counts compare."
+        - label: "Goal 2 in plan.md is the node count measurement, stated so reflection.md can say whether it was met."
+        - label: "Every line of play ends, and every turn has a real choice."
+        - label: "The team can play one full game of it by hand, on paper."
+  - type: dropdown
+    attributes:
+      label: Outcome
+      options:
+        - "Signed off"
+        - "Signed off after the fix below"
+        - "Not yet: a new plan is needed"
     validations:
       required: true
   - type: textarea
     attributes:
-      label: What is yours about it
-      description: Invented from scratch, say so and give the core idea. Extended from a game that exists, name it and the rule, board, piece or goal you changed.
-      placeholder: Extended from tic-tac-toe. Both players place the same symbol, and whoever completes a line loses.
-    validations:
-      required: true
+      label: Fix before writing code
+      description: The one thing to change, if there is one.
   - type: textarea
     attributes:
-      label: One state records
-      description: Everything the search needs to know about one moment of the game, and nothing else.
-      placeholder: The board as a 6 by 7 grid of X, O or empty, plus whose turn it is
-    validations:
-      required: true
-  - type: input
-    attributes:
-      label: Who moves, and in what order
-      placeholder: Two players alternate, human first; or only our agent moves
-    validations:
-      required: true
-  - type: textarea
-    attributes:
-      label: Actions from a state
-      placeholder: Drop a piece in any column that is not full, at most 7
-    validations:
-      required: true
-  - type: input
-    attributes:
-      label: Terminal test, or goal test for a puzzle
-    validations:
-      required: true
-  - type: input
-    attributes:
-      label: Utility, or path cost for a puzzle
-      placeholder: +1 win, -1 loss, 0 draw, from our agent's side; or 1 per move
-    validations:
-      required: true
-  - type: textarea
-    attributes:
-      label: Size, as a number, and whether the full search finishes
-      description: States or tree nodes, with where the number came from.
-      placeholder: Tic-tac-toe has 5,478 reachable positions and a full tree of 549,946 nodes, so minimax finishes from the empty board
-    validations:
-      required: true
-  - type: textarea
-    attributes:
-      label: The algorithm, and why it fits this game
-      description: Who moves, what a state is, and whether the tree finishes are the reasons that count.
-    validations:
-      required: true
-  - type: input
-    attributes:
-      label: The second algorithm it is measured against
-      placeholder: alpha-beta; A* with a second heuristic; breadth first
-    validations:
-      required: true
-  - type: input
-    attributes:
-      label: The biggest technical risk
-    validations:
-      required: true
-  - type: textarea
-    attributes:
-      label: Instructor checklist
-      description: Leave this as it is. The instructor ticks it at your table.
-      value: |
-        - [ ] The game is the team's own: invented, or extended from a game that exists with at least one rule, board, piece or goal that differs and changes what the search sees.
-        - [ ] The mover matches the algorithm: something else takes turns, so minimax or alpha-beta; or only the agent moves, so the frontier loop (breadth first, uniform cost, A*).
-        - [ ] No hidden information and no dice: fully observable and deterministic.
-        - [ ] A state is a whole position plus whose turn it is, and two move orders that reach the same position give the same state.
-        - [ ] The size estimate is a number, and the team can say where it came from.
-        - [ ] If the full tree does not finish, a depth limit and an evaluation function are named, and the team knows the answer at the horizon is an estimate.
-        - [ ] The second algorithm runs on the same interface from the same starting state, so the node counts compare.
-        - [ ] Goal 2 in plan.md is the node count measurement, stated so reflection.md can say whether it was met.
-        - [ ] Every line of play ends, and every turn has a real choice.
-        - [ ] The team can play one full game of it by hand, on paper.
-
-        **Fix before writing code:**
-
-        **Signed off:** yes / after the fix above
+      label: Notes
