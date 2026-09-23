@@ -1,33 +1,17 @@
 name: Plan sign-off
-description: Thursday 24 September, in class. Filled in by the instructor at the team's table, from the team's docs/plan.md.
+description: Posted by the instructor after reading the team's docs/plan.md. There is nothing here for the team to fill in.
 title: "Project 1 plan sign-off"
 labels: ["plan sign-off"]
 body:
   - type: markdown
     attributes:
       value: |
-        Filled in by the instructor during Thursday's class, from the team's `docs/plan.md` draft.
-        Nothing here is graded. Each team is visited at its table and the plan is either signed off
-        or given the one thing to fix before any code is written.
-  - type: input
-    attributes:
-      label: Team members present
-    validations:
-      required: true
-  - type: input
-    attributes:
-      label: The game, and what is the team's own about it
-    validations:
-      required: true
-  - type: input
-    attributes:
-      label: The algorithm, and the second one it is measured against
-    validations:
-      required: true
+        Posted by the instructor after reading the team's `docs/plan.md`. Nothing here is graded and
+        nothing here is for the team to fill in. A ticked box is a part of the plan that is settled.
+        Anything left unticked is what to change before any code is written.
   - type: checkboxes
     attributes:
       label: The plan
-      description: Tick what the draft of plan.md says, not what the team says at the table.
       options:
         - label: "The game is the team's own: invented, or extended from a game that exists with at least one rule, board, piece or goal that differs and changes what the search sees."
         - label: "The mover matches the algorithm: something else takes turns, so minimax or alpha-beta; or only the agent moves, so a frontier search (breadth first, depth first, iterative deepening, uniform cost, A*)."
@@ -40,19 +24,3 @@ body:
         - label: "Goal 2 in plan.md is the node count measurement, stated so reflection.md can say whether it was met."
         - label: "Every line of play ends, and every turn has a real choice."
         - label: "The team can play one full game of it by hand, on paper."
-  - type: dropdown
-    attributes:
-      label: Outcome
-      options:
-        - "Signed off"
-        - "Signed off after the fix below"
-        - "Not yet: a new plan is needed"
-    validations:
-      required: true
-  - type: textarea
-    attributes:
-      label: Fix before writing code
-      description: The one thing to change, if there is one.
-  - type: textarea
-    attributes:
-      label: Notes

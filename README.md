@@ -3,7 +3,7 @@
 |                    |                                                    |
 | :----------------- | :------------------------------------------------- |
 | `Tuesday 22 Sep`   | Released, in lab                                    |
-| `Thursday 24 Sep`  | Plan sign-off, in class                             |
+| `Thursday 24 Sep`  | Plan due, 11:59pm                                   |
 | `Tuesday 13 Oct`   | Demo, in lab                                        |
 | `Tuesday 20 Oct`   | Due, with code review                               |
 | Points              | 10                                                  |
@@ -84,7 +84,7 @@ that it has every one of these:
 
 There is no starter code in this repository. It holds this README,
 `docs/plan.md` and `docs/reflection.md` to fill in, the automated checks,
-and the three issue forms the instructor fills in: the plan sign-off, the
+and the three issue forms the instructor posts: the plan sign-off, the
 demo, and the code review.
 
 ## A worked example to read
@@ -154,10 +154,13 @@ distance estimate. Say in `plan.md` whether your game needs this.
 
 ## What is due, and when
 
-- **Thursday 24 September, in class: the plan sign-off.** Bring your draft
-  of `docs/plan.md`. The instructor works through it with your team at your
-  table, and will either sign off or indicate what to fix before you write
-  code. The **Plan sign-off** issue is filled in for you.
+- **Thursday 24 September: `docs/plan.md`, by 11:59pm.** The instructor
+  works with each team at its table during Thursday's class, so bring your
+  draft and the questions you want answered. Commit the plan by 11:59pm
+  that night. The instructor reads it and posts the **Plan sign-off** issue
+  to your repository within 24 hours: a ticked checklist, where anything
+  left unticked is what to change before you write code. There is nothing
+  in that issue for your team to fill in.
 - **Tuesday 13 October, in lab: a demo.** Demonstrate a current working
   version of your game. The **Demo** issue is filled in for you following
   your demonstration. This is a checkpoint, not the final grade.
